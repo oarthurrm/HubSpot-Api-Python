@@ -1,0 +1,3 @@
+- Criar produto
+- Extrair dados de vendas
+- Transformar em CSV

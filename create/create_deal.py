@@ -1,5 +1,5 @@
 import hubspot
-from hubspot.crm.contacts import SimplePublicObjectInputForCreate, ApiException
+from hubspot.crm.deals import SimplePublicObjectInputForCreate, ApiException
 from dotenv import load_dotenv
 import os
 from pprint import pprint
@@ -15,19 +15,18 @@ client = hubspot.Client.create(access_token=API_KEY)
 
 # Defina as propriedades do contato a ser criado
 properties = {
-    "firstname": "Fulano",
-    "lastname": "Silva",
-    "email": "fulano@silva.com.br",
-    "phone": "123-456-7890",
-    "company": "Google Emp",
+    "dealname": "Venda de Teclado para Microsoft",
+    "amount": "100",
+    "dealstage": "contractsent",
+    "hs_object_id": "28700921399",
 }
 
 # Cria a instância do contato com as propriedades
-contact_input = SimplePublicObjectInputForCreate(properties=properties)
+deal_input = SimplePublicObjectInputForCreate(properties=properties)
 
 try:
     # Cria o contato no HubSpot CRM
-    api_response = client.crm.contacts.basic_api.create(simple_public_object_input_for_create=contact_input)
+    api_response = client.crm.deals.basic_api.create(simple_public_object_input_for_create=deal_input)
     pprint(api_response)  # Mostra a resposta da API
 
 except ApiException as e:

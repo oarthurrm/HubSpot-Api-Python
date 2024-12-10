@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import requests
 import csv
+import json
 
 load_dotenv()
 
@@ -9,13 +10,14 @@ API_KEY = os.getenv('TOKEN')
 
 def companies_list(API_KEY):
     
-    URL = f'https://api.hubapi.com/crm/v3/objects/companies'
+    URL = f'https://api.hubapi.com/crm/v4/objects/companies'
 
     response = requests.get(URL, headers={
         'Authorization': f'Bearer {API_KEY}'
     })
     
     companies = response.json()
+    print(json.dumps(companies, indent=2))
     
     companies_csv = 'empresas.csv'
     

@@ -10,7 +10,7 @@ print(API_KEY)
 
 def contacts_list(API_KEY):
     
-    URL = f'https://api.hubapi.com/crm/v3/objects/contacts'
+    URL = f'https://api.hubapi.com/crm/v4/objects/contacts'
 
     response = requests.get(URL, headers={
         'Authorization': f'Bearer {API_KEY}'

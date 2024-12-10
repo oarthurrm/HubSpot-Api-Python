@@ -11,8 +11,8 @@ API_KEY = os.getenv('TOKEN')
 client = hubspot.Client.create(access_token=API_KEY)
 
 properties = {
-    "name": "Microsoft",
-    "domain": "microsoft.com",
+    "name": "Testando Empresa",
+    "domain": "empresateste.com",
     "phone": "123-456-7890",
     "city": "São Paulo",
     "state": "SP",
